@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\View;
 }
 */
 /***** return view *****/
-class Youtube extends Controller
+/*class Youtube extends Controller
 {
     public function index()
     {
@@ -45,4 +45,29 @@ class Youtube extends Controller
             return view('admin.profile',['data'=>$profile]);
         }
     }
-} 
+}
+*/
+
+/***** Http Requests *****/
+class Youtube extends Controller
+{
+    public function index(Request $request)
+    {
+        //print_r($request->input());
+        //print_r($request->url());
+        //print_r($request->method());
+        //print_r($request->path());
+
+        echo ($request->input('name'));
+        if($request->isMethod("get"))
+        {
+            echo "get request";
+        }
+        else
+        {
+            echo "post method";
+        }
+
+
+    }
+}
