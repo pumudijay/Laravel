@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get("/site","Youtube@index");
+Route::get("/site","Youtube@index");
 
 //pass paameters
-Route::get("/site/{site}","Youtube@index");
+//Route::get("/site/{site}","Youtube@index");
