@@ -11,11 +11,21 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+//Route::get("/site","Youtube@index");
 
-Route::get("/site","Youtube@index");
-
-//pass paameters
+//pass parameters
 //Route::get("/site/{site}","Youtube@index");
+
+
+/* Login */
+
+Route::get('/',function(){
+    return view('admin.login');
+});
+
+Route::post('/login',"Login@index");
