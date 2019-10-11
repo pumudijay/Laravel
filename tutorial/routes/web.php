@@ -11,11 +11,11 @@
 |
 */
 
-/*
+
 Route::get('/', function () {
     return view('welcome');
 });
-*/
+
 //Route::get("/site","Youtube@index");
 
 //pass parameters
