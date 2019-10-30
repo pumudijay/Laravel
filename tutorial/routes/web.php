@@ -24,8 +24,12 @@ Route::get('/', function () {
 
 /* Login */
 
-Route::get('/',function(){
+/*Route::get('/',function(){
     return view('admin.login');
-});
+});*/
 
-Route::post('/login',"Login@index");
+//Route::post('/login',"Login@index");
+
+Auth::routes(['verify' => true]);
+
+Route::get('/home','HomeController@index')->name('home');
