@@ -12,5 +12,8 @@ class Login extends Controller
             ['user'=>'required','email'=>'required|email','password'=>'min:5|max:8']
         );
        print_r($request->input());
+
+        print_r($request->input('user'));
+        $request->session->put('userdata');
     }
 }
