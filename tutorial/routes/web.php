@@ -13,7 +13,7 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('youtube');
 });
 
 //Route::get("/site","Youtube@index");
@@ -33,3 +33,7 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home','HomeController@index')->name('home');
+
+Route::get('customer','CustomerController@index');
+
+Route::post('customer','CustomerController@store');

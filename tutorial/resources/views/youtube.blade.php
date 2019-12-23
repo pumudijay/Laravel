@@ -1,7 +1,5 @@
-<html>
+@extends('main')
 
-<body>
-    <h1>Hello, Youtube</h1>
+<h2>youtube</h2>
 </body>
-
 </html>
