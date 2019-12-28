@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCustomerModelsTable extends Migration
+class CreateCrudsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateCustomerModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('customer_models', function (Blueprint $table) {
+        Schema::create('cruds', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateCustomerModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customer_models');
+        Schema::dropIfExists('cruds');
     }
 }

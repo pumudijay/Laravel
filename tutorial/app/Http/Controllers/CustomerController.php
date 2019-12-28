@@ -11,15 +11,21 @@ class CustomerController extends Controller
     //
     public function index(){
 
-        $customer = DB::table('customers')->select('id','name')->get();
+        $customer = DB::table('customers')->select('id','name','email')->get();
     	return view('customer',['customers'=>$customer]);
     } 
 
     public function store(Request $request){
 
+        $data = request()->validate([
+            'name'=>'required|min:3',
+            'email'=>'required|email'
+        ]);
+
         $name = $request->input('name');
+        $email = $request->input('email');
     	DB::table('customers')->insert(
-        ['name' => $name]
+        ['name' => $name,'email' => $email]
         
         );
 
