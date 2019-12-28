@@ -76,6 +76,8 @@ class CrudController extends Controller
     public function edit($id)
     {
         //
+        $data=Crud::findOrFail($id);
+        return view('crud.edit',compact('data'));
     }
 
     /**
@@ -88,6 +90,20 @@ class CrudController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'first_name'=>'required',
+            'last_name'=>'required',            
+            'email'=>'required'
+        ]);
+
+        $form_data = array(
+            'first_name' => $request->first_name, 
+            'last_name' => $request->last_name,
+            'email' =>$request->email
+        );
+        Crud::whereId($id)->update($form_data);
+
+        return redirect('crud')->with('success','Data is successfully updated!!');
     }
 
     /**
@@ -99,5 +115,9 @@ class CrudController extends Controller
     public function destroy($id)
     {
         //
+        $data=Crud::findOrFail($id);
+        $data->delete();
+
+        return redirect('crud')->with('success','Data is successfully deleted!!');
     }
 }
