@@ -26,6 +26,7 @@ class CrudController extends Controller
     public function create()
     {
         //
+        return view('crud.create');
     }
 
     /**
@@ -37,6 +38,20 @@ class CrudController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'first_name'=>'required',
+            'last_name'=>'required',
+            'email'=>'required'
+        ]);
+
+        $form_data = array(
+            'first_name' =>$request->first_name ,
+            'last_name' =>$request->last_name ,
+            'email' => $request->email
+        );
+        Crud::create($form_data);
+
+        return redirect('crud')->with('sucess','Data Added successfully.');
     }
 
     /**
