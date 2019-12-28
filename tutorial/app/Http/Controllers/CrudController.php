@@ -51,7 +51,7 @@ class CrudController extends Controller
         );
         Crud::create($form_data);
 
-        return redirect('crud')->with('sucess','Data Added successfully.');
+        return redirect('crud')->with('success','Data Added successfully.');
     }
 
     /**
@@ -63,6 +63,8 @@ class CrudController extends Controller
     public function show($id)
     {
         //
+        $data=Crud::findOrFail($id);
+        return view('crud.view',compact('data'));
     }
 
     /**
