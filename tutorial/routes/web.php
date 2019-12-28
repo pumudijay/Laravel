@@ -37,3 +37,5 @@ Route::get('/home','HomeController@index')->name('home');
 Route::get('customer','CustomerController@index');
 
 Route::post('customer','CustomerController@store');
+
+Route::resource('crud','CrudController');

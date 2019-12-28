@@ -14,6 +14,8 @@ class CrudController extends Controller
     public function index()
     {
         //
+        $data=Crud::latest()->paginate(5);
+        return view('crud.index',compact('data'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     /**
