@@ -7,7 +7,7 @@
 </div>
 
 <div class="jumbotron">
-<form method="post" action="{{ route('crud.store') }}" enctype="multipar/form-data">
+<form method="post" action="{{ route('crud.store') }}">
 	
 	@csrf
 	<div class="form-group">
